@@ -37,8 +37,9 @@ markdown: kramdown
 
 # Prose settings
 prose:
-  _topics:
-    - name: "methods"
-      field:
-        element: "textarea"
+  metadata:
+    _topics:
+      - name: "methods"
+        field:
+          element: "textarea"
 
