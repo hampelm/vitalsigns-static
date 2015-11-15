@@ -39,7 +39,21 @@ markdown: kramdown
 prose:
   metadata:
     _topics:
+      - name: "categories"
+        field:
+          label: "Categories"
+          element: "multiselect"
+          options:
+            - name: "Transportation"
+              value: "Transportation"
+            - name: "Land & People"
+              value: "Land & People"
+            - name: "Economy"
+              value: "Economy"
+            - name: "Environment"
+              value: "Environment"
       - name: "methods"
         field:
+          label: "Methods"
           element: "textarea"
 
