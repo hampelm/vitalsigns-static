@@ -4,18 +4,37 @@ layout: default
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2>I am a topic</h2>
+    <h2>I am a {{ page.categories }} page</h2>
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
   </header>
 
+  {% for factoid in page.factoids %}
+  <h3>{{ factoid }}</h3>
+  {% endfor %}
+
+  <h2>Intro</h2>
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
 
+  <h2>Measures</h2>
   {% for measure in site.measures %}
     {% if measure.topic == page.title %}
       <h3>{{measure.title}}</h3>
       {{ measure.content }}
     {% endif %}
   {% endfor %}
+
+  {% if page.methods %}
+    <h2>Methods</h2>
+    {{ page.methods | markdownify }}
+  {% endif %}
+
+    <h2>Data</h2>
+    <ul>
+    {% for dataset in page.datasets %}
+      <li><a href="{{ dataset[1] }}">{{dataset[0]}}</a></li>
+    {% endfor %}
+    </ul>
+
 </article>
